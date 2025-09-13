@@ -10,4 +10,43 @@ Nmap uses multiple ways to specify its targets:
 
 🔴 Scanning a "Local" Network
 - Here the term 'local' refer to the network which we are directly connected to, such as ethernet or wifi network.
-- 
+- Here we scan a wifi network to which we are directly connected, Our Ip address is 192.168.66.89, and we are scanning 192.168.66.0/24 network.
+- We used **"nmap -sn 192.168.66.0/24"** command and its output are shown in the image <img width="1740" height="576" alt="nmap1" src="https://github.com/user-attachments/assets/0173a206-f903-4269-b804-e38f11907b3f" />
+- As we are scanning the local network we can also see the MAC addresses of the devices. 
+- Along with MAC addresses we have network card vendors information which also beneficial to guess the target device.
+- Because the scan was on directly connected network, the nmap sent ARP requests to the devices, and when the devices responded the Nmap lables it with "Host is up".
+
+🔴 Scanning a "Remote" Network
+- Here "remote" means that atleast one router is there which separates our system from this network.
+- While scanning a remote network we cannot send ARP request to the target devices.
+- Here our system has the IP address 192.168.66.89 and it belongs to the 192.168.66.0/24 network.
+- We will scan our target network 192.168.11.0/24 where there would be two or more routers (hops) separate our local system from the target hosts (devices).<img width="1788" height="576" alt="nmap2" src="https://github.com/user-attachments/assets/0bfbe559-c808-4ad7-ba56-57cd2dc36099" />
+- The Nmap output shows that five hosts are up.
+
+🔴 Nmap offers a list scan with the option "-sL". This scan helps to list out the targets to scan without actually scanning them. For example, **"nmap -SL 192.168.0.1/24"** will list the 256 targets that will be scanned. This option helps confirm the target before running the actual scan.
+🔴 "-sn" option only discover the live hosts not the services running on the target host, which usually discover by scanning the ports of the host. The **-sn** option helps to scan the network without causing much noise.
+
+🔴 Port Scanning
+- Scanning of ports helps to discover network services listening on the live hosts. Network services means to any process that is listening for incoming connections on a TCP or UDP port.
+- Common network services include web servers, which usually listen on TCP ports 80 and 443, and DNS servers, which typically listen on UDP (and TCP) port 53.
+- TCP and UDP each have 65,535 ports.
+🔴 Connect Scan
+- The connect scan can be triggered using "-sT" option. It tries to complete the TCP - three-way handshake with every target TCP port.
+- If the TCP port turns out to be open and Nmap connects successfully, Nmap will close the established connection.
+- In the screenshot below, our scanning machine has the IP address 192.168.124.148 and the target system has TCP port 22 open and port 23 closed. In the part marked with 1, you can see how the TCP three-way handshake was completed and later torn down with a TCP RST-ACK packet by Nmap. The part marked with 2 shows a connection attempt to a closed port, and the target system responded with a TCP RST-ACK packet. <img width="951" height="567" alt="nmap3" src="https://github.com/user-attachments/assets/e512f384-8c0b-4aa4-87b5-b7f53ae84120" />
+
+🔴 SYN Scan (Stealth)
+- **-sS** flag is used to do SYN Scan.
+- The SYN scan does not complete a the TCP three-way handshake like connect scan, the SYN Scan only executes the first step: it sends only TcP SYN packet.
+- Due to fewer logs entry it is considered a relatively stealthy scan.
+  
+🔴 Scanning UDP Ports
+- **-sU** option is used to scan for UDP services.
+- UDP does not require establishing a connection and closing of connection afterwards.
+- UDP is suitable for real-time communication, such as live broadcasts, video call, voice call, gaming, streaming, etc.
+- UDP traffic is different from TCP as it is simpler than TCP.
+
+🔴 Limiting the Target Ports
+- Nmap scans the most common 1000 ports by default.
+- -F is for Fast mode, it scans 100 most common ports. For example "nmap -F 198.160.xx.xx"
+- -p[range] allows to specify 
