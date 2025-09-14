@@ -36,12 +36,12 @@ Nmap uses multiple ways to specify its targets:
 - In the screenshot below, our scanning machine has the IP address 192.168.124.148 and the target system has TCP port 22 open and port 23 closed. In the part marked with 1, you can see how the TCP three-way handshake was completed and later torn down with a TCP RST-ACK packet by Nmap. The part marked with 2 shows a connection attempt to a closed port, and the target system responded with a TCP RST-ACK packet. <img width="951" height="567" alt="nmap3" src="https://github.com/user-attachments/assets/e512f384-8c0b-4aa4-87b5-b7f53ae84120" />
 
 🔴 SYN Scan (Stealth)
-- **-sS** flag is used to do SYN Scan.
+- **-sS**: flag is used to do SYN Scan.
 - The SYN scan does not complete a the TCP three-way handshake like connect scan, the SYN Scan only executes the first step: it sends only TcP SYN packet.
 - Due to fewer logs entry it is considered a relatively stealthy scan.
   
 🔴 Scanning UDP Ports
-- **-sU** option is used to scan for UDP services.
+- **-sU**: option is used to scan for UDP services.
 - UDP does not require establishing a connection and closing of connection afterwards.
 - UDP is suitable for real-time communication, such as live broadcasts, video call, voice call, gaming, streaming, etc.
 - UDP traffic is different from TCP as it is simpler than TCP.
@@ -49,4 +49,15 @@ Nmap uses multiple ways to specify its targets:
 🔴 Limiting the Target Ports
 - Nmap scans the most common 1000 ports by default.
 - -F is for Fast mode, it scans 100 most common ports. For example "nmap -F 198.160.xx.xx"
-- -p[range] allows to specify 
+- -p[range] : to scan ports by specifying the range of ports. For example, "nmap -p10-1024 198.168.xx.xx".
+- "nmap -p-25 198.168.xx.xx" : scan all ports between 1-25.
+- "nmap -p- 198.168.xx.xx" : scan all the ports and it is equivalent to p1-65535.  
+
+🔴 More Options
+- "-O" : Guess the Operating System of the target host. For e.g. "nmap -sS -O 192.168.124.211"
+- "-sV": Scans the open ports and detect the version of service running i.e. the version of SSH. The command would be "nmap -sS -sV 192.168.124.211".
+- "-A" : To detect OS, version scanning, traceroute and other things. Very much noisy scan.
+- "-Pn" : To Force Scan the Ports of Hosts showing down.
+
+🔴 Scan Speed and Timing options
+- 
