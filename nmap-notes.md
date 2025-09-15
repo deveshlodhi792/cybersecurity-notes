@@ -62,7 +62,9 @@ Nmap uses multiple ways to specify its targets:
 🔴 Scan Speed and Timing
 - To control scan speed Nmap gives six timing templates - paranoid (0), sneaky (1), polite (2), normal (3), aggressive (4), and insance (5).
 - Timing template can be used by its name or number. For example, "nmap -sS -T0 (or -T 0) or -T paranoid 192.168.121.xx" to opt for the slowest timing.
-- To control parallel probes on TCP and UDP Ports"--min-parallelism <numprobes> and "--max-parallelism <numprobes>".
-- To control the rate of packets send per second then use "--min-rate <number>" and "--max-rate <number>".
-- to limit the maximum time you are willing to wait then use "--host-timeout <time>" option.
+- To control parallel probes on TCP and UDP Ports"--min-parallelism *numprobes*" and "--max-parallelism *numprobes*".
+- To control the rate of packets send per second then use "--min-rate *number*" and "--max-rate *number*".
+- to limit the maximum time you are willing to wait then use "--host-timeout *time*" option.
+
+🔴 Controlling the output
 - 
