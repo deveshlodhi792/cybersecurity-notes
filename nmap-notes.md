@@ -67,4 +67,12 @@ Nmap uses multiple ways to specify its targets:
 - to limit the maximum time you are willing to wait then use "--host-timeout *time*" option.
 
 🔴 Controlling the output
-- 
+- "-v" (verbosity) to get more output and updates about what's happening while scanning is in progress. It displays the real-time information about the scan progress.
+- To increase verbosity level : -vv, -vvv, or -vvvv. Another way is by specify the level like -v2, -v3, -v4, -vn. One can also increase the verbosity level by presssing "v" after the scan alreaday started.
+- "-d" for debugging-level output, it is higher verbosity level. To increase the level we can specify the level no. like -d2, -d3, and so on, the higher it can go to "-d9" but the output would be of thousands of lines.
+
+To Save Scan Report
+- "-oN *filename*" - Normal output
+- "-oX *filename*" - XML output
+- "-oG *filename*" - grep-able output (useful for grep and awk)
+- "-oA *filename*" - Output in all major formats
