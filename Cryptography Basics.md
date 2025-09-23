@@ -31,7 +31,7 @@
 - Examples of symmetric encryption:-
   1. DES (Data Encryption Standard) - it was adopted as standard in 1977 and uses a 56-bit key. In 1999, it was successfully broken in less than 24 hours then we shifts to 3DES.
   2. 3DES (Triple DES) - It is applied three times, here the key size is 168 bits, though the effective security is 112 bits. 3DES was more of an ad-hoc solution when DES was no longer considered secure. 3DES was deprecated in 2019 and replaced by AES (Advanced Encryption Standard).
-AES (Advanced Encryption Standard) was adopted as a standard in 2001. Its key size can be 128, 192, or 256 bits.
+  3. AES (Advanced Encryption Standard) was adopted as a standard in 2001. Its key size can be 128, 192, or 256 bits.
 - There are many more symmetric encryption ciphers used in various applications, but they are not been adopted as standards.
 - "Asymmetric Encryption" - This encryption uses a pair of keys for encryption.
 - One key (public key) is used to encrypt and the other key(private key) is used to decrypt data.
