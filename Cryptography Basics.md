@@ -42,3 +42,26 @@
 - Diffie-Hellman uses 3072-bit and 4096-bit keys for enhanced secuity, however their recommended minimum key size is 2048 bits.
 - ECC uses 256-bit key and it provides 3072-bit RSA key level security in encryption.
 - Asymmetric encryption is based on a particular group of mathematical problems that are easy to compute in one direction but extremely difficult to reverse.
+
+🔴 Task - 6 : Basic Math
+1. XOR operation - XOR (exlusive OR) compares two bits and returns 1 if the bits are different and 0 if they are the same.
+2. XOR is bitwise operator and it perform the operation bit by bit.
+3. For example - 1010 ^(XOR) 1100 = 0110
+4. XOR has several properties that make it useful in cryptography and error detection.
+   - Apply XOR to a value with itself results in 0 and applying XOR to any value with 0 leaves it unchanged.
+   - XOR is commutative i.e. A ^ B = B ^ A.
+   - It is associative i.e. (A ^ B) ^ C = A ^ (B ^ C)
+5. Lets say P is the plaintext and K is the secret key. The cipher text is C = P ^ K.
+   - If we want to recover P (decryption).
+   - C = P ^ K
+   - C ^ K = (P ^ K) ^ K
+   - C ^ K = P ^ (K ^ K) - its assosicative
+   - C ^ K = P ^ 0
+   - C ^ K = P
+   - This way we get the plaintext for symmetric alogrithm.
+6. Modulo Operation - This mathematical operation often used in cryptography, it is written as '%' or as 'mod'.
+   - The modulo operator is X%Y is the remainder when X is divided by Y.
+   - For e.g. 25%5 = 0, remainder is 0.
+   - 23%6 = 5, remainer is 5.
+7. Modulo is not reversible. If we are givent the equation x%5 = 4, infinte values if x would satisfy this equation.
+8. The modulo operation always returns a non-negative result less than the divisor. This means that for any integer a and positive integer n, the result of a%n will always be in the range 0 to n − 1.
