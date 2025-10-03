@@ -11,7 +11,8 @@
 🔴 Common use of Asymmetric Encryption
 - Asymmetric cryptography is used to exchange keys for symmetric encryption.
 - Asymmetric cryptography is relatively slower than symmetric encryption.
-- Asymmetric cryptography only used once to get the symmetric encryption cipher and key and then one can communicate privately using symmetric encryption. 
+- Asymmetric cryptography only used once to get the symmetric encryption cipher and key and then one can communicate privately using symmetric encryption.
+
 🔴 RSA (Rivest Shamir Adleman)
 - RSA is a public-key encryption alogrithm that enables secure data transmission over insecure channels.
 - The Math That Makes RSA Secure
