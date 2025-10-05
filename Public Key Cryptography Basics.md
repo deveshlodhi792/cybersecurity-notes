@@ -28,8 +28,27 @@
      φ(n) = (p-1) (q-1)
           =  31243 - 157 - 199 + 1
            = 30888
-   5. He selects e = 163 (e should be co-prime (relatively prime) to φ(n).
+   5. He selects e = 163 ('e' should be co-prime (relatively prime) to φ(n).
    6. He then selects d= 379, using e x d = 1 mod φ(n), e x d = 163 x 379 = 61777, and 61777 mod 30888 = 1.
    7. Public keys of bob is (n,e), i.e., (31243,163) and the private key is $(n,d), i.e., (31243,379).
-   8. Let’s say that the value they want to encrypt is x = 13, then Alice would calculate and send y = xe mod n = 13163 mod 31243 = 16341.
-   9. Bob will decrypt the received value by calculating x = yd mod n = 16341379 mod 31243 = 13. This way, Bob recovers the value that Alice sent. 
+   8. Let’s say that the value they want to encrypt is x = 13, then Alice would calculate and send y = x^e mod n = 13163 mod 31243 = 16341.
+   9. Bob will decrypt the received value by calculating x = y^d mod n = 16341379 mod 31243 = 13. This way, Bob recovers the value that Alice sent. 
+- RSA in CTFs
+  1. There are many articles online which can explain RSA.
+  2. Articles will give almost all information to complete the challenges.
+  3. <a href="https://github.com/Ganapati/RsaCtfTool">RsaCtfTool</a> and <a href="https://github.com/ius/rsatool">rsatool</a> are both good tools for defeating RSA challenge in CTFs.
+  4. Main variables in RSA in CTFs:-
+     - p and q are large prime numbers
+     - n is the product of p and q
+     - The public key is n and e
+     - The private key is n and d
+     - m is used to represent the original message, i.e. plaintext
+     - c represents the encrypted text, i.e., ciphertext.
+
+🔴 Diffie-Hellman Key Exchange
+- Key exchange aims to establish a shared secret between two parties.
+- This method allows two parties to establish a shared secret (secret keys) over an insecure communication channel without requiring a pre-existing shared secret.
+- If there is an observer in communication channel he will not able to get this key, while establishing the shared secret.
+- After generating and establishing the shared key it can be used for symmetric encryption in subsequent communications.
+- Here is the scenario where Alice and Bob want to talk securely, so they decided to establish a shared key for symmetric cryptography but don't want to use asymmetric cryptography for key exchange. So here they will use Diffie-Hellman key Exchange.
+- 
