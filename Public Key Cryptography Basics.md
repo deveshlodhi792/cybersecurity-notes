@@ -50,5 +50,23 @@
 - This method allows two parties to establish a shared secret (secret keys) over an insecure communication channel without requiring a pre-existing shared secret.
 - If there is an observer in communication channel he will not able to get this key, while establishing the shared secret.
 - After generating and establishing the shared key it can be used for symmetric encryption in subsequent communications.
-- Here is the scenario where Alice and Bob want to talk securely, so they decided to establish a shared key for symmetric cryptography but don't want to use asymmetric cryptography for key exchange. So here they will use Diffie-Hellman key Exchange.
-- 
+- Here is the scenario where Alice and Bob want to talk securely, so they decided to establish a shared key for symmetric cryptography but they don't want to use asymmetric cryptography for key exchange. So here they will use Diffie-Hellman key Exchange.
+  1. Alice and Bob decides the public variables: a large prime number 'p' and a generator or base 'g', where 0 < g < p.
+  2. The public variables are the values that will be share publicly over communication channel despite the presence of adversaries.
+  3. Suppose, both parties chose the value of p = 29 and g = 3, although in real case values would be far more greater than these values but here we took these values for simplify the calculations. 
+  4. After this each party chooses a private number or integer. Let say Alic chooses a = 13 and Bob Choses b = 15. These numbers or integers are private keys and they must not be disclosed.
+  5. After chosing the private keys, they calculates their public keys using their private keys:-
+     - Alice Calucate A (public key) = g^a mod p
+                                     = 3^13 mod 29 = 19
+     - Bob calcuate B = g^b mod p = 3^15 mod 29 = 26
+  These are their public keys.
+  6. Alice and Bob send their keys to each other. Bob receives A = 19 and Alice receives B = 26. Here this step is called Key exchange.
+  7. After getting each others public keys they can finally calculate the shared secret or secret key using the received public key and their own private key.
+  8. Alice calculates - B^a mod p = 26^13 mod 29 = 10 and Bob calculates A^b mod p = 19^15 mod 29 = 10.
+  9. Both get the shared secret key = 10 (g^ab mod p = 10).
+
+<img width="1560" height="1180" alt="image" src="https://github.com/user-attachments/assets/c06b9d20-5b83-42a0-8121-afea1afe5c32" />
+
+- Diffie-Hellman key exchange often used alongise RSA public key cryptography.
+- Diffie-Hellman used for key agreement, RSA used for digital signatures, key transport, and authentication.
+- RSA helps prove the identity of the person via digital signing.
