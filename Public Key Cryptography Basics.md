@@ -73,9 +73,16 @@
 - Diffie-Hellman and RSA are incorporated into many security protocols and standards to provide a comprehensive security solution.
 
 🔴 SSH
-- Authenticating the server
-
+- **Authenticating the server**
   1.  Before establishing the connection the SSH client confirms whether we recognise the server's public key fingerprint.
   2.  ED25519 is the public-key algorithm used for digital signature generation and verification in the example.
   3.  In this example our SSH client didn't recognise this key and is asking us to confirm whether we want to continue with the connection.
-  4.  SSH client gave warning to 
+  4.  SSH client gave warning to avoid man-in-the-middle attack which is probable; a malicious sever might have intercepted the connection and replied, pretending to be the target server.
+  5.  Here the user must authenticate the server identity by checking the public key signature and answering "yes" so that SSH Client will record this public key signature for this host.
+ 
+-** Authenticating the Client**
+  1. SSH users are authenticated using usernames and passwords (like logging in to a physical machine) but it is not considered as best security practices.
+  2. SSH uses public and private keys to prove that the client is valid and authorised user on the server.
+  3. By default, SSH keys are RSA keys. We can choose which algorithm to generate and add the passphrase to encrypt the SSH key.
+  4. **ssh-keygen** is the program used to generate key pairs, it supports various algorithms like dsa, ecds, ed255519, rsa, etc.
+    - DSA 
