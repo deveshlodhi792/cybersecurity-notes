@@ -85,4 +85,6 @@
   2. SSH uses public and private keys to prove that the client is valid and authorised user on the server.
   3. By default, SSH keys are RSA keys. We can choose which algorithm to generate and add the passphrase to encrypt the SSH key.
   4. **ssh-keygen** is the program used to generate key pairs, it supports various algorithms like dsa, ecds, ed255519, rsa, etc.
-    - DSA 
+    - DSA (Digital Signature Algorithm) is a public-key cryptography algorithm specifically designed for digital signatures.
+    - ECDSA (Elliptic Curve Digital Signature) is a variant of DSA that uses elliptic curve cryptography to provide smaller key sizes for equivalent security.
+    -  
