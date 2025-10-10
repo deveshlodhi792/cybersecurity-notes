@@ -85,6 +85,23 @@
   2. SSH uses public and private keys to prove that the client is valid and authorised user on the server.
   3. By default, SSH keys are RSA keys. We can choose which algorithm to generate and add the passphrase to encrypt the SSH key.
   4. **ssh-keygen** is the program used to generate key pairs, it supports various algorithms like dsa, ecds, ed255519, rsa, etc.
-    - DSA (Digital Signature Algorithm) is a public-key cryptography algorithm specifically designed for digital signatures.
-    - ECDSA (Elliptic Curve Digital Signature) is a variant of DSA that uses elliptic curve cryptography to provide smaller key sizes for equivalent security.
-    -  
+    -  DSA (Digital Signature Algorithm) is a public-key cryptography algorithm specifically designed for digital signatures.
+    -  ECDSA (Elliptic Curve Digital Signature) is a variant of DSA that uses elliptic curve cryptography to provide smaller key sizes for equivalent security.
+    -  ECDSA-SK (ECDSA with Security Key) is an extension of ECDSA. It uses hardware-based security keys for enhanced private key protection.
+    -  Ed25519 -  It is a public-key signature system. It uses EdDSA (Edwards-Curve Digital Signature Algorithm) with Curve25519.
+    -  Ed25519-SK (Ed25519 with Security Key)- It is a variant of Ed25519. It uses hardware-based security key for improved private key protection like ECDSA-SK.
+
+  5. To generate key pairs - **ssh-keygen -t ed25519
+** . It is the default option for generating key paris.
+  6. To view generated keys - cat id_ed25519.pub
+  7. We can choose other algorithm also to generate key pairs.
+
+-** SSH Private Keys**
+  1.  Private SSH keys should be treated as your passwords.
+  2.  Private keys must not be shared under any circumstances.
+  3.  Private keys can be more secure if encrypted with a passphrase.
+  4.  Passphrase used to decrypt the private key doesn't idenify you to the server. The passphrase is never transmitted and never leaves your system.
+  5.  John the Ripper tool can be used to attack an encrypted SSH keys to attempt to find the passphrase. Thats why using a complex passphrase and keeping your private key private is important.
+  6.  SSH keys should be generated on our machine and then copy the public key on remote machine.
+  7.  **ssh-copy-id** command used to copy public keys.
+  8.   
