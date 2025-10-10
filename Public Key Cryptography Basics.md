@@ -80,7 +80,7 @@
   4.  SSH client gave warning to avoid man-in-the-middle attack which is probable; a malicious sever might have intercepted the connection and replied, pretending to be the target server.
   5.  Here the user must authenticate the server identity by checking the public key signature and answering "yes" so that SSH Client will record this public key signature for this host.
  
--** Authenticating the Client**
+-**Authenticating the Client**
   1. SSH users are authenticated using usernames and passwords (like logging in to a physical machine) but it is not considered as best security practices.
   2. SSH uses public and private keys to prove that the client is valid and authorised user on the server.
   3. By default, SSH keys are RSA keys. We can choose which algorithm to generate and add the passphrase to encrypt the SSH key.
@@ -96,7 +96,7 @@
   6. To view generated keys - cat id_ed25519.pub
   7. We can choose other algorithm also to generate key pairs.
 
--** SSH Private Keys**
+-**SSH Private Keys**
   1.  Private SSH keys should be treated as your passwords.
   2.  Private keys must not be shared under any circumstances.
   3.  Private keys can be more secure if encrypted with a passphrase.
