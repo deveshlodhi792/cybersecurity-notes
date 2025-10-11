@@ -104,4 +104,15 @@
   5.  John the Ripper tool can be used to attack an encrypted SSH keys to attempt to find the passphrase. Thats why using a complex passphrase and keeping your private key private is important.
   6.  SSH keys should be generated on our machine and then copy the public key on remote machine.
   7.  **ssh-copy-id** command used to copy public keys.
-  8.   
+  8.  **ssh -i privatekeyFileName user@host** is used to set up private SSH key for the standard Linux OpenSSH Client. Only the owner should be able to read or write to the private key (600 or stricter).
+  9.  The **/.shh** folder is the default place to store these keys for OpenSSH.
+  10.  The **authorized_keys** file in this directory hols public keys that are allowed access to the server if key authentication is enabled.
+  11.  Key authentication only accepted if running SSH from root user.
+ -**Using SSH Keys to Get a "Better Shell**
+  1.  If the remote system has the user login enabled then we can upgrade a reverse shell to SSH connection using SSH Keys (Public and Private).
+  2.  When we can access and have control over the remote system and the connection from its end instead of us, then it is called reverse shell.
+  3.  www-data (service accounts) does not allow this connection but regular users and root will work.
+  4.  One can leave the SSH public key in the authorized_key file on the remote machine so that the machine can be connect later without any issues of unstabilised reverse shells.
+
+🔴 Digital Signatures and Certificates
+-  
