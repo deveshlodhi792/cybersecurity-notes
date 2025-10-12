@@ -115,4 +115,42 @@
   4.  One can leave the SSH public key in the authorized_key file on the remote machine so that the machine can be connect later without any issues of unstabilised reverse shells.
 
 🔴 Digital Signatures and Certificates
--  
+-  Digital signatures provide a way to verify the authencity and integrity of a digital message or document.
+-  Digital signatures provide the authencity of files like who have created or modified them.
+-  Asymmetric cryptography is used in Digital Signatures.
+-  The digital signautres produced by our private key, which can be verified using our public key.
+-   Electronic Signature and Digital Signature are not same.
+-   Electronic Signature refer to pasting an image of a signature on top of a document.
+-   Electronic Signature does not prove the document's integrity, as anyone can copy and paste an image.
+- **Certificates: Prove Who you Are!**
+  1.  Certificates are an essential application of public key cryptography.
+  2.  Certificates are also linked to digital signatures.
+  3.  These Certificates are used in HTTPS to provide the authenticity of a website.
+  4.  The Certificates have a chain of trust, starting with a root CA (Certificate Authority).
+  5.  From install time, our device, operating system, and web browser automatically trust various root CAs.
+  6.  Certificates are trusted only when the Root CAs say they trust the organisation that signed them.
+  7.  It is a whole chain; for example, the certificate is signed by an organisation, the organisation is trusted by CA, and the CA is trusted by your browser.
+  8.  Therefore, our browser trusts the certificate. In general, there are long chains of trust.
+
+🔴 PGP and GPG or GnuPG
+  1.  PGP - Pretty Good Privacy.
+  2.  It is a **software** that implements encryption for encrypting files, performing digital signing and more. 
+  3. GnuPG or GPG is a free and open-source software tool to implement the encryptions and digital signatures based on the OpenPGP standard.
+  4. GPG is commonly used in email to protect the confidentiality of the email messages. Futhermore, it can be used in sign an email and confirm its integrity.
+  5. Below is an example of generating GPG. You are asked about the purpose of using gpg, whether signing only or signing and encrypting. Besides selecting the cryptographic algorithm, we needed to choose an expiry date for the generated key. Finally, we provided some information about us: our name, email address, and a comment usually about the purpose of this key.
+  6. **gpg --full-gen-key** to generate keys.
+  7. PGP/GPG private keys can be protected with passphrase, similarly like SSH private keys.
+  8. To attempt to crack it we can use John the Ripper and gpg2john.
+  9. **gpg --import backup.key** - To import the keys in new computer.
+  10. **gpg --decrypt confidential_message.gpg** - to decrypt the messages.
+  
+🔴 Conclusion
+  1.  Cryptography is the science of securing communication in the presence of adversaries.
+  2.  Cryptanalysis is the science that studies how to break or bypass cryptographic systems.
+  3.  Trying every possible password combination is called Brute-force attack.
+  4.  When we know that the password is most likely a dictionary word, it will make more sense to try words from a dictionary instead of every possible password combination, this is called a dictionary attack.
+5. Some more explanation:-
+-  Cryptography is the science of securing communication and data using codes and ciphers.
+-  Cryptanalysis is the study of methods to break or bypass cryptographic security systems without knowing the key.
+-  Brute-Force Attack is an attack method that involves trying every possible key or password to decrypt a message.
+-  Dictionary Attack is an attack method where the attacker tries dictionary words or combinations of them.         
