@@ -12,5 +12,19 @@
 -  One cannot predict the ouput for any input and vice-versa.
 -  Good hashing algorithms are those which compute hash values fast and are nearly impossible to reverse, i.e., go from the ouptut and determine the input.
 -  Any slight change in the input data, even a single bit, can result in significant change in output.
--  
--  
+-  The output of a hash function is in raw bytes and then it encoded into base64 or hexaecimal.
+-  md5sum, sha1sum, sha256sum and sha512sum produce their output in hexadecimal format.
+-  Each raw byte = two hexadecimal digits.
+-  **hexdump -C file1.txt**- to see text file into hexadecimal format.
+-  md5sum *.txt - to encode with md5 (Message-Digest Algorithm 5)
+-  sha1sum *.txt - to encode with sha1 (Secure Hash Algorithm 1)
+-  sha256sum *.txt - to encode with sha-256 (Secure Hash Algorithm 256)
+
+-  **Why is Hashing Important?**
+  1.  Hashing helps protect data's integrity and ensure password confientiality.
+  2.  When we log into a website, the server uses hashing to verfiy our password.
+  3.  Server records the hash value of our passwords only.
+
+-  **What's a Hash Collision?**
+  1.  When two different inputs gives the same output (hash value), then it is called a hash collision.
+  2.  Hash functions are designed to avoid collisions and prevent an attacker from being able to create a collision intentionally.
