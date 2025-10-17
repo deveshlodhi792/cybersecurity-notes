@@ -28,3 +28,14 @@
 -  **What's a Hash Collision?**
   1.  When two different inputs gives the same output (hash value), then it is called a hash collision.
   2.  Hash functions are designed to avoid collisions and prevent an attacker from being able to create a collision intentionally.
+The number of inputs is unlimited and the number of possible outputs is limited, this leads to a pigeonhole effect.
+If a hash function produces 4-bit hash value then we have 16, i.e 2^4 = 16, different hash values and therefore there is high probability of hash collision.
+However, a good hash function ensure that the probability of a collision is neglibile.
+MD5 and SHA1 are considered insecure due to the ability to engineer hash collisions.
+MD5 and SHA1 are based on two different algorithm so there is no attack has yet given a collision in both algorithms simultaneously.
+
+🔴 Insecure Password Storage for Authentication
+-  Hashing has many uses in Cyber security.
+-  Two of them are Password storage and Data integrity.
+-  Password storage here mean to store password (usually in hashed form) for authentication purpose.
+-  
