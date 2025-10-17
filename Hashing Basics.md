@@ -38,4 +38,9 @@ MD5 and SHA1 are based on two different algorithm so there is no attack has yet 
 -  Hashing has many uses in Cyber security.
 -  Two of them are Password storage and Data integrity.
 -  Password storage here mean to store password (usually in hashed form) for authentication purpose.
--  
+-  Password managers does not store passwords in hash form, they used encryption to store them as we have to retrieve them in clear text to apply on the website for authentication.
+-  Storing passwords in plaintext is a very insecure secruity practice for any web applications or website.
+-  These are three insecure practices for security of passwords:-
+    1.  Storing passwords in plaintext
+    2.  Storing passwords using a deprecated encryption.
+    3.  Storing passwords using an insecure hashing algorithm like SHA-1, MD5.
