@@ -67,4 +67,12 @@ You can find many good guides online that promote best security practices when s
 -  We don't use encryption to store password because the keys are involved and if someone get the key he can easily decrypt the passwords. Passwords are meant to store in that way so that cannot get decrypted.
 
 🔴 Recognising Password Hashes
+-  There are automated hash recognition tools such as hashID exists, but they are unreliable for many formats. These tools are only reliable when Hashes have a prefix.
+-  Web Application database more likely have hash that are MD5 than NTLM (NT LAN Manager).
+-  It is important to learn yourself to recognize the hash type.
+-  On Linux Password hashes are stored in /etc/shadow, which is readable by root. The password are used to be stored in /etc/passwd, which was readable by everyone.
+-  The shadow file contains the password information.
+-  Each line contains nine fields. Lines are separated by colons (:).
+-  The first field is the login name or username. The Second field is the encrypted password.
+-  Other fields info can be found by executing "man 5 shadow" command on Linux system.
 -  
