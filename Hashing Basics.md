@@ -75,4 +75,36 @@ You can find many good guides online that promote best security practices when s
 -  Each line contains nine fields. Lines are separated by colons (:).
 -  The first field is the login name or username. The Second field is the encrypted password.
 -  Other fields info can be found by executing "man 5 shadow" command on Linux system.
--  
+-  The encrypted password field contains hashed passphrase with four components: prefix (algorithm id), option (parameters), salt and hash.
+-  Its format looks like "$prefix$options$salt$hash".
+-  Following are the most common Unix/Linux-style password prefixes one might encounter:-
+  1.  $y$    -  yescrypt is a scalable hashing scheme and is the default and recommended choice in new system.
+  2.  $gy$   -  gost-yescrypt uses the GOST R 34.11-2012 hash function and the yescrypt hashing method.
+  3.  $7$    -  scrypt is a password-based key derivation function.
+  4.  $2b$, $2y$, $2a$, $2x$  -  bcrypt is a hash based on the Blowfish block cipher originally developed for OpenBSD but supported on a recent version of FreeBSD, NetBSD, Solaris 10 and newer, and several Linux distribution.
+  5.  $6$  -  sha512crypt is a hash based on SHA-2 with 512-bit output orignially develped for GNU libc and commonly used on (older) Linux system.
+  6.  $md5  -  SunMD5 is a hash based on the MD5 algorithm originally developed for Solaris.
+  7.  $1$  -  md5crypt is a hash based on the MD5 algorithm originally developed for FreeBSD.
+  8.  More info about these prefixes - "man 5 crypt".
+  9.  Example
+      - strategos:$y$j9T$76UzfgEM5PnymhQ7TlJey1$/00Sg64dhfF.TigVPdzqiFang6uZA4QA1pzzegKdVm4:19965:0:99999:7:::
+      - The fields are separated by colons. The important ones are the username and the hash algorithm, salt, and hash value. The second field has the format $prefix$options$salt$hash.
+
+In the example above, we have four parts separated by $:
+      1.  y indicates the hash algorithm used, yescrypt
+      2.  j9T is a parameter passed to the algorithm
+      3.  76UzfgEM5PnymhQ7TlJey1 is the salt used
+      4.  /OOSg64dhfF.TigVPdzqiFang6uZA4QA1pzzegKdVm4 is the hash value
+
+-  MS Windows passwords are hashed using NTLM.
+-  NTLM (New Technology LAN Manager) is a suite of security protocols offered by Microsoft for Windows for the authentication of users' identity and their protection.
+-  NTLM is a variant of MD4.
+-  NTLM is visually identical to MD4 and MD5. To determine the hash type one must have knowledge of context.
+-  Passwords are stored in the file named SAM (Security Accounts Manager) the path is C:\Windows\System32\config\SAM.
+-  MS Windows prevent normal users from dumping (extract or copy) from this file.
+-  Tools like mimikatz circumvent MS Windows security.
+-  The hashes foun there are split into NT hashes and LM hashes.
+
+- A great place to find more hash formats and password prefixes is the Hashcat Example Hashes page. For other hash types, you’ll typically need to check the length or encoding or even conduct some research into the application that generated them. Never underestimate the power of research.
+-    
+     
