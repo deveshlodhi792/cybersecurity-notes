@@ -106,5 +106,17 @@ In the example above, we have four parts separated by $:
 -  The hashes foun there are split into NT hashes and LM hashes.
 
 - A great place to find more hash formats and password prefixes is the Hashcat Example Hashes page. For other hash types, you’ll typically need to check the length or encoding or even conduct some research into the application that generated them. Never underestimate the power of research.
--    
+
+🔴 Password Cracking
+-  Hashes can't be decrypted as they are not encrypted, They can only be cracked by hashing many different inputs (rockyou.txt covers many passwords), potentially adding the salt and comparing it to the target hash.
+-  Tools like Hashcat and John the Ripper are used for hash cracking.
+-   GPU (Graphics Processing Units) have thousands of cores and they are very good at some mathematical calculations involved in hash functions.
+-   GPU's can be used to crack many hash types quickly.
+-   Some hashing algorithm like Bcrypt, are designed so that hashing on a GPU does not provide any speed improvement over using a CPU; this helps them resist cracking.
+-  VMs (Virtual Machines) don't have access to the host's graphics card(s). You can set up it on software to take gpu in use but it is complicated. 
+-  Performance degradation occurs if we use CPU from a virtualised OS, if we try to crack a hash it needs every extra CPU cycle.
+-  To make the most of your GPU it is best to run Hashcat on your local physical machine.
+-  Hashcat for Windows is available on the websites and it can be run from Powershell.
+-  Hashcat works with OpenCL in a VM, but the speeds will likely be worse than cracking on your host.
+-  John the Ripper uses CPU by default and works in a VM out of the box, although you may get better speeds running it on the host OS to avoid any virtualisation overhead and make the most of your CPU cores and threads.                
      
