@@ -118,5 +118,19 @@ In the example above, we have four parts separated by $:
 -  To make the most of your GPU it is best to run Hashcat on your local physical machine.
 -  Hashcat for Windows is available on the websites and it can be run from Powershell.
 -  Hashcat works with OpenCL in a VM, but the speeds will likely be worse than cracking on your host.
--  John the Ripper uses CPU by default and works in a VM out of the box, although you may get better speeds running it on the host OS to avoid any virtualisation overhead and make the most of your CPU cores and threads.                
-     
+-  John the Ripper uses CPU by default and works in a VM out of the box, although you may get better speeds running it on the host OS to avoid any virtualisation overhead and make the most of your CPU cores and threads.
+
+-  Time to Crack Some Hashes
+    1.  To crack hash using hashcat - "hashcat -m <hash_type> -a <attack_mode> hashfile wordlist.
+    2.  -m <hash_type> - Here we have to specify the hash-type in numeric format. For example, -m 1000 is for NTLM. Check man hashcat and   <a href="https://hashcat.net/wiki/doku.php?id=example_hashes">Hash code Page</a> to find the hash type code to use.
+    3.  -a <attack_mode> - It specifies the attack-mode. For example -a 0 is for straight, i.e., trying one password from the wordlist after the other.
+    4.  hashfile is the file containing the hash you want to crack.
+    5.  wordlist is the security word list you want to use in your attack.
+    6.  For example - **hashcat -m 3200 -a 0 hash.txt /usr/share/wordlists/rockyou.txt**
+    7.  You can choose how to crack hashes. You’ll need to use online tools (Crackstation, Hashes.com), Hashcat, or John the Ripper. Although you can use online rainbow tables to solve, we strongly advise against doing that as this will restrict your learning experience.
+  
+🔴 Hashing for Integrity Checking
+-  Hashing can be used to check that files haven't been changed.
+-  If you put same data as input, you always get the same data as output. Even if a single bit changes, the hash value will change significantly.
+-  Therefore the hash value can be used to check that files haven't been modified or to ensure that the file you downloaded is identical to the file on the web server.
+-       
