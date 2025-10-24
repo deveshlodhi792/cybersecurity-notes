@@ -133,4 +133,25 @@ In the example above, we have four parts separated by $:
 -  Hashing can be used to check that files haven't been changed.
 -  If you put same data as input, you always get the same data as output. Even if a single bit changes, the hash value will change significantly.
 -  Therefore the hash value can be used to check that files haven't been modified or to ensure that the file you downloaded is identical to the file on the web server.
--       
+-  Hashing is also used to find duplicate files. If two documents have the same hash, they are the same document. This is very convenient for finding and deleting duplicate files.
+- HMACs
+  1.  HMAC (Keyed-Hash Message Authentication Code) is a type of Message Authentication Code (MAC).
+  2.  It uses a cryptographic hash function in combination with a secret key to verify the authenticity and integrity of data.
+  3.  Firstly HMAC can be used to ensure that the person who created the HMAC is who they say they are, i.e. authenticity is confirmed.
+  4.  Second it proves that the message hasn't been modified or corrupted, i.e., integrity is maintained.
+  5.  Secret key used - Proved authencity
+      Hashing Alogrithm - Proved integrity
+  6.  The following steps give you a fair idea of how HMAC works-
+      a.  The secret key is padded (extend using zeros) to the block size of the hash function.
+      b.  The padded key is XORed (exclusive OR) with a constant (usually a block of zeros and ones).
+      c.  The message is hashed using the hash function with the XORed key.
+      d.  The result from step c is then hashed again with the same hash function but using the padded key XORed with another constant.
+      e.  The final output is the HMAC value, typically a fixed-size string.
+      f.  Technically speaking, the HMAC function is calculated using the following expression:
+
+HMAC(K,M) = H((K⊕opad)||H((K⊕ipad)||M))
+
+Note that M and K represent the message and the key, respectively.
+
+🔴 Conclusion
+-   base64 -d filename - to decode from base64 format.         
