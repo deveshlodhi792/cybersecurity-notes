@@ -154,4 +154,18 @@ HMAC(K,M) = H((K⊕opad)||H((K⊕ipad)||M))
 Note that M and K represent the message and the key, respectively.
 
 🔴 Conclusion
--   base64 -d filename - to decode from base64 format.         
+-   base64 -d filename - to decode from base64 format.
+-   Hashing:
+    1.  It is a process that takes input data and produces a hash value.
+    2.  It is a fixed-size string of characters, also referred to digest.
+    3.  Hash value represents the data and any change in the data leads to change in the hash value.
+    4.  Hashing is one-way, unlike encryption or encoding.
+    5.  One can't reverse the process to get the original data.             
+-   Encoding:
+    1.  Encoding converts data from one form to another to make it compatible (comfirtable) with a specific system.
+    2.  ASCII, UTF-8, UTF-16, UTF-32, ISO-8859-1, and Windows-1252 are valid encoding methods for the English Langauge.
+    3.  Base32 and Base64 encoding commonly used when sending and saving data and it is not for any specific language.
+    4.  Encoding is reversible thats why it does not protect the confientiality of the message.
+
+-  Encryption can protects data confidentiality using a cryptographic cipher and a key. It is also reversible, provided we know the cipher and can access the key.
+    
