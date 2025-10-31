@@ -1,3 +1,8 @@
 🔴 Introduction
 -  John the Ripper is a well-known, well-loved and versatile hash-cracking tool.
 -  It combines a fast cracking speed with an extraordinary range of compatible hash types.
+
+🔴 Basics Terms
+-  Hash: Hash (or hash value, digest) is the representation of arbitrary size of data in a fixed-length form. The hash value is obtained by running the original data through a hashing algorithm like MD4, MD5, SHA1 and NTLM.
+-  Hash values are nearly irreversible because hashing functions designed as one-way functions. Thats why It is hard to find the original input if we given the hash value only.
+-  
