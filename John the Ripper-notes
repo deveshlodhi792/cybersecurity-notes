@@ -21,6 +21,20 @@
 -  sudo apt install john - for Ubuntu and Kali distribution. You will get "John the Ripper 1.9.0-jumbo-1" on Kali but for Ubuntu you have to build from the source to access all the tools available via Jumbo John.
 -  For windows one can download and install zipped binary binary.
 -  You can get the rockyou.txt wordlist from the <a href="https://github.com/danielmiessler/SecLists">SecLists</a> repository under the /Passwords/Leaked-Databases subsection. 
-- You may need to extract it from the *.tar.gz* format using tar xvzf rockyou.txt.tar.gz.
+- You may need to extract it from the '.tar.gz' format using 'tar xvzf rockyou.txt.tar.gz.'.
+
+🔴 Cracking Basic Hashes
+-  Basic syntax of John the Ripper :- 
+john [options] [file path]
+-  john: invokes the John the Ripper program
+   [Options] : Specifies the options you want to use
+   [file path] : The file containing the hash we are trying to crack, if we are in the same directory we don't need to specify the whole path to file.
+-  John has buit-in feature to detect what type of hash its being given and it crack the hash using appropriate rules and formats but this approach is unreliable.
+-  We should identify the hash type first before cracking it.
+- For automatic cracking -  john --wordlist=[path to wordlist] [path to file]
+  --wordlist= : specify using wordlist mode, reading from the file that you supply in the provided path.
+- example usage:
+  john --wordlist=/usr/share/wordlists/rockyou.txt hash_to_crack.txt
+  --wordlist
 
 
