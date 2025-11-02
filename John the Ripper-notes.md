@@ -31,10 +31,28 @@ john [options] [file path]
    [file path] : The file containing the hash we are trying to crack, if we are in the same directory we don't need to specify the whole path to file.
 -  John has buit-in feature to detect what type of hash its being given and it crack the hash using appropriate rules and formats but this approach is unreliable.
 -  We should identify the hash type first before cracking it.
-- For automatic cracking -  john --wordlist=[path to wordlist] [path to file]
+- For automatic cracking -
+  * john --wordlist=[path to wordlist] [path to file]
+
   --wordlist= : specify using wordlist mode, reading from the file that you supply in the provided path.
 - example usage:
-  john --wordlist=/usr/share/wordlists/rockyou.txt hash_to_crack.txt
-  --wordlist
+
+  john --wordlist=/usr/share/wordlists/rockyou.txt **hash_to_crack.txt**
+
+-  To identify the hash algorithm one can use **hash-identifier**, a python tool that is super easy to use and will tell you what different types of hashes the one you enter is likely to be, giving you more options if the first one fails, or simply we can use <a href="https://hashes.com/en/tools/hash_identifier">Hashes.com</a>.
+-  To download hash-id package use <a href="https://gitlab.com/kalilinux/packages/hash-identifier/-/raw/kali/master/hash-id.py">Hash-id tool</a> link.
+-  Download it using **wget** or **curl** command on linux.
+-  Then launch it using **python3 hash-id.py**.
+
+-  Format-Specific Cracking
+  1. * john --format=[format] --wordlist=[path to wordlist] [path to file]
+       --format=: this is the flag to tell john that you're giving it a hash of a specific format and to use the following format to crack it.
+       [format] : The format (algorithm) that the hash is in
+     
+     * Example:
+       john --format=raw-md5 --wordlist=/usr/share/wordlists/rockyou.txt hash_to_crack.txt
+
+- 
+
 
 
