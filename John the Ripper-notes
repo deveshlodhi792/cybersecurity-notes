@@ -20,6 +20,7 @@
 -  Other version of John does not have tools such as zip2john an rar2john.
 -  sudo apt install john - for Ubuntu and Kali distribution. You will get "John the Ripper 1.9.0-jumbo-1" on Kali but for Ubuntu you have to build from the source to access all the tools available via Jumbo John.
 -  For windows one can download and install zipped binary binary.
--  <a href="https://github.com/danielmiessler/SecLists">SecLists</a>
+-  You can get the rockyou.txt wordlist from the <a href="https://github.com/danielmiessler/SecLists">SecLists</a> repository under the /Passwords/Leaked-Databases subsection. 
+- You may need to extract it from the *.tar.gz* format using tar xvzf rockyou.txt.tar.gz.
 
 
