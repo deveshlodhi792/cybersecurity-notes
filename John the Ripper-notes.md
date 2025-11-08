@@ -52,7 +52,10 @@ john [options] [file path]
      * Example:
        john --format=raw-md5 --wordlist=/usr/share/wordlists/rockyou.txt hash_to_crack.txt
 
+- Note on Formats:
+  1. To check if you need to add raw- prefix or not, you can list all John's formats using **john --list=formats**.
+  2. To check manually or grep for your hash type using something like **john --list=formats | grep -iF "md5"**. 
+
+🔴 Cracking Windows Authentication Hashes
 - 
-
-
 
