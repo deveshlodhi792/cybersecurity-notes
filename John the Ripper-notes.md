@@ -57,5 +57,23 @@ john [options] [file path]
   2. To check manually or grep for your hash type using something like **john --list=formats | grep -iF "md5"**. 
 
 🔴 Cracking Windows Authentication Hashes
-- 
-
+- NThash is a hash format which modern Windows operating system machines use to store user and service passwords.
+- The previous version of Windows format for hashing passwords known as LM.
+- Thats why NThash commonly referred as NTLM, coz NT/LM.
+- SAM (Security Account Manager) in Windows is a database file in which user account information are stored, it includes usernames and hash passwords.
+- Mimikatz tool or Active Directory database: NTDS.dit can help to acquire NThash/NTLM hashes by dumping the SAM database on a Windows Machine.
+- One may not have to crack the hash to continue priviledge escalation, as one can often conduct a "pass the hash" attack.
+- Note:- to access the SAM database file one should be a priviledge user.
+- NT is used as --format= for NTLM hashes.
+    
+🔴 Cracking/etc/shadow Hashes
+- Passwords hashes are stored in /etc/shadow file on Linux machines.
+- It also store other information, such as the date of last password change and password expiration information.
+- This file is only accessible by the root user.
+- To crack /etc/shadow password, the file should be combine with /etc/passwd file for John to understand the data it's being given.
+- For this process unshadow tool of John suite is used.
+- **unshadow [path to passwd] [path to shadow]**
+    * unshadow : invokes the unshadow tool
+    * [path to passwd]: The file that contains the copy of the /etc/passwd file you've taken from the target machine.
+    * [path to shadow] : The file that contains the copy of the /etc/shadow file you've taken from the target machine.
+    * 
