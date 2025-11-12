@@ -76,4 +76,19 @@ john [options] [file path]
     * unshadow : invokes the unshadow tool
     * [path to passwd]: The file that contains the copy of the /etc/passwd file you've taken from the target machine.
     * [path to shadow] : The file that contains the copy of the /etc/shadow file you've taken from the target machine.
-    * 
+- **unshadow /etc/passwd /etc/shadow > unshadowed.txt**
+    * This will merge both files into one file named unshadowed.txt.
+    * Later this file will be used to crack password using john.
+      
+- **unshadow local_passwd local_shadow > unshadowed.txt**
+    * local_passwd file contains the relevant line we want to use while cracking the password. This file was saved by the user or tester so he doesn't have to feed the whole /etc/passwd file. In this case this file have line for the root user - root:x:0:0::/root:/bin/bash.
+    * local_shadow file contains the hashed password line for the root user :root:$6$2nwjN454g.dv4HN/$m9Z/r2xVfweYVkrr.v5Ft8Ws3/YYksfNwq96UL1FX0OJjY1L6l.DS3KEVsZ9rOVLB/ldTeEL/OIhJZ4GMFMGA0:18576::::::.
+
+- **john --format=sha512crypt --wordlist=/usr/share/wordlists/rockyou.txt unshadowed.txt/path to file**
+    * We can fee the output file unshadowed.txt to John for cracking.
+    * We don't need to specify hash mode but for reliablity we can use here. 
+
+🔴 Single Crack Mode
+-  dfd
+  
+  
