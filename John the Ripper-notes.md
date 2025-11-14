@@ -89,6 +89,14 @@ john [options] [file path]
     * We don't need to specify hash mode but for reliablity we can use here. 
 
 🔴 Single Crack Mode
--  dfd
+- Single crack mode is another mode of John.
+- In this mode john uses only the information provided in the username.
+- John takes the username provided and it try and work out possible passwords heuristically(trial and error, experimenting) by slightly changing the letters and numbers contained within the username.
+
+- Word Mangling
+    * Consider the username "Markus".
+    * Some possible passwords could be: Markus1, Markus2, Markus3, MArkus, MARkus, MARKus, Markus!, Markus$, etc.
+    * This technique is called word mangling.
+    * 
   
   
