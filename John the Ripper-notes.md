@@ -97,6 +97,21 @@ john [options] [file path]
     * Consider the username "Markus".
     * Some possible passwords could be: Markus1, Markus2, Markus3, MArkus, MARkus, MARKus, Markus!, Markus$, etc.
     * This technique is called word mangling.
-    * 
-  
+    * While using word mangling John builds its dictionary based on the info it has been fed and it uses the set of rules called "mangling rules".
+    * Mangling rules define how it can mutate the word it started with to generate a wordlist based on relevant factors for the target system.
+    * This technique suggests and exploits how poor passwords can be based on information about the username or the service they're logging into.
+    * Some people choose password which includes the name of website or service they use, like if someone uses facebook their password can be face@123 or namefb789, with word mangling technique in single crack mode John builds its dictionary based on username, personal info, name of website or service, etc.
+
+- GECOS
+   * GECOS stands for General Electric Comprehensive Operating System.
+   * In the /etc/passwd file the fifth field is GECOS. It can be seen by looking at the entries of /etc/passwd.
+   * The entries are separated by colons (root:x:0:0::/root:/bin/bash) here the fifth field is GECOS.
+   * It stores the user's full name, office number, and telephone number, and other info.
+   * John can take information stored in those records, such as full name and home directory name, to add to the wordlist it generates when cracking /etc/shadow hashes with single crack mode.
+
+- Using Single Crack Mode
+  * john --single --fromat=[] [path to file]
+  * --single : The flag lets John know you want to use the single hash-cracking mode.
+  * --format=[format] : As always, it is vital to identify the proper format.
+  * Example usage: john --single --format=raw-shaw256 hashes.txt
   
