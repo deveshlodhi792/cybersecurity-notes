@@ -114,4 +114,15 @@ john [options] [file path]
   * --single : The flag lets John know you want to use the single hash-cracking mode.
   * --format=[format] : As always, it is vital to identify the proper format.
   * Example usage: john --single --format=raw-shaw256 hashes.txt
+  * To crack a password using single crack mode the username must be prepend to hash.
+  * For example, if the hash = 1efee03cdcb96d90ad48ccc7b8666033 an username is joker then hash = joker:1efee03cdcb96d90ad48ccc7b8666033.
+  * You have to do this to hash within the file.
+
+🔴 Custom Rules
+- Many websites and organisation enforce password complexity, when one try to create new account or change the password.
+- Password complexity here means the password must contain 1. Lowercase Letter, 2. Uppercase Letter, 3. Number, 4. Symbol.
+- This complexity makes the location of characters predictable, thats why one can exploit passwords on this base.
+- Creating Custom Rules:-
+  * Custom rules are defined in the **John.conf** file.
+  *  
   
