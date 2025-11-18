@@ -124,5 +124,37 @@ john [options] [file path]
 - This complexity makes the location of characters predictable, thats why one can exploit passwords on this base.
 - Creating Custom Rules:-
   * Custom rules are defined in the **John.conf** file.
-  *  
+  * john.conf file is usually located in /etc/john/john.conf if one have installed John using a package manager or built from source with **make**.
+  *  The first line for custome rule - [List.Rules:THMRules]
+  *  This line define the name of your rule. This name will use as the flag or argument later while applying the rule.
+  *  Then we use a regex style pattern match to define where the word will be modified;(we are covering only primary and most common modifiers here). To see the all rules go at this <a href="https://www.openwall.com/john/doc/RULES.shtml">page</a>.
+      + Az: This modifier takes the word and appends it with the character you define
+      + A0: Takes the word and prepends it with the character you define
+      + c: Capitalises the character positionally (wherever this modifier present gives effect on that character position)
+  * These can be used in combination to define where and what in the word you want to modify.
+  * After using modifier we must define what character should be appened, prepened or otherwise included.
+  * We do this by adding character sets in square brackets [ ]:-
+      +  [0-9] : to include numbers 0-9 (at the end or starting of word/password)
+      +  [0] : to include only the number 0
+      +  [A-z] : to include both upper and lowercase
+      +  [A-Z] : to include only uppercase letters
+      +  [a-z] : Will include only lowercase letters
+      +  [a] : to include only a
+      +  [!$%@&] : to inclue the symbols !,$,%,@, and &.
+
+  * For example, to generate a wordlist in John from the rules that would match the example password **Polopassword1!** (we should have word **polopassword** in our wordlist first), we would create a rule entry like this :
+      +  [List.Rules:PoloPassword]
+      +  cAz"[0-9] [!$%@&]"
+      +  We have to use Double quotes " " after the modifier
+      +  c: Capitalises the first letter
+      +  Az: Appends to the end of the word
+      +  [0-9] : A number in the range 0-9
+      +  [!$%@&] : The password is followed by one of these symbols
+
+  * After defining this rule, we can use it as John argument.
+  * --rule=PoloPassword flag is used as John Argument.
+  * Full command : john --wordlist=[path to wordlist] --rule=PoloPassword [path to file]
+
+🔴 Cracking password protected Zip Files
+    
   
