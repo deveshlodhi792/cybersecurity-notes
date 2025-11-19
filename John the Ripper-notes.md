@@ -156,5 +156,31 @@ john [options] [file path]
   * Full command : john --wordlist=[path to wordlist] --rule=PoloPassword [path to file]
 
 🔴 Cracking password protected Zip Files
-    
+- Firstly we have to convert the zip files into a hash format that John can understand.
+- We have to use zip2john tool of Jumbo John suite.
+- syntax: zip2john [options] [zip file] > [output file]
+  * options : Allows you to pass specific checksum options to zip2john; this shouldn't often be necessary
+  * zip file : The path to the Zip file you wish to get the hash of
+  * ">" : This redirects the output from this command to another file.
+  * output file : This is the file that will store the output.
+- Example usage: zip2john zipfile.zip > zip_hash.txt
+- Then we put the zip2john output file (zip_hash.txt) in john like we did with unshadow:
+- john --wordlist=/usr/share/wordlists/rockyou.txt zip_hash.txt
+
+🔴 Cracking password protected RAR Archives
+- rar2john tool is used to crack RAR archives
+- RAR Archives are the compressed files created by the WinRAR Archive Manager.
+- To convert RAR file into hash format :
+  * rar2john [rar file] > [output file]
+- Example usage
+  * rar2john secure.rar > secure-hash.txt
+- Crack the output file using john:
+  * john --wordlist=/usr/share/wordlists/rockyou.txt secure-hash.txt
+- To extract or open the RAR files -
+  * Install **unrar** utility using **sudo apt update** then **sudo apt install unrar**
+  * After installing use "unrar e secure.rar" then put the password.
   
+🔴 Cracking SSH keys with John
+- ssh2john will be used to convert id_rsa files into john understandable hash file.
+- **ssh2john id_rsa > id-rsa-hash.txt **- will be used to convert the file.
+- **john --wordlist=/usr/share/wordlists/rockyou.txt id-rsa-hash.txt** - will be used to crack the file.
