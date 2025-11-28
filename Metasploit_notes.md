@@ -46,3 +46,13 @@ payloads/**
   * Pyaloads have four different directories: adapters, singles, stagers and stages.
   * Adapters - an adapter wraps signle payloads to convert them into different formats. For example, a normal single payload can be wrapped inside a powershell adapter.
   * singles - these are self-contained payloads which do not need to download an additional component to run. for example, add user, launch notepad.exe.
+  * Stagers - It helps to set up a connection channel between Metasploit and the target system. First the Stagers are uploaded by "staged payloads" on the target system then they downloa the rest payload (stage).
+  * Stages: Stages are the remaining size of payloads downloaded by the stagers.
+ 
+- Single payload - generic/shell_reverse_tcp - have "_" between "shell" and "reverse".
+- Staged Payloads - windows/x64/shell/reverse_tcp - have "/" between "shell" and "reverse".
+
+- Post - Post modules will be useful on the final stage of the penetration testing process listed above, post-exploitation.
+
+🔴 Msfconsole
+- 
