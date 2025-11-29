@@ -55,4 +55,5 @@ payloads/**
 - Post - Post modules will be useful on the final stage of the penetration testing process listed above, post-exploitation.
 
 🔴 Msfconsole
-- 
+- <mark>msfconsole</mark> - to launch metasploit framework.
+- <mark>ls</mark> - to lists the contents of the folder from which Metasploit was launched.
