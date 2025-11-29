@@ -57,3 +57,8 @@ payloads/**
 🔴 Msfconsole
 - <mark>msfconsole</mark> - to launch metasploit framework.
 - <mark>ls</mark> - to lists the contents of the folder from which Metasploit was launched.
+- <mark>ping -c 1 8.8.8.8</mark> - to check connectivity with google's DNS.
+- <mark>clear</mark> - to clear terminal screen.
+- Metasploit not allow to use regular command line features (eg. does not support output redirection).
+- 
+- 
