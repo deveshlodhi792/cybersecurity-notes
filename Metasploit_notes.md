@@ -64,4 +64,22 @@ payloads/**
 - <mark>history</mark> command can be used to see commands history.
 - msfconsole have tab completion support.
 - Msfconsole is managed by context. If we using a module and we set a parameter or command such as <mark>RHOSTS</mark> in it, now we switched to another module then the previous parameter will not automatically set on the new module, we have to set it again for this module.
--  <mark>use exploit/windows/smb/ms17_010_eternalblue</mark> - to use a module in msfconsole
+-  <mark>use exploit/windows/smb/ms17_010_eternalblue</mark> - to use a module in msfconsole.
+-  EternalBlue exploit was developed for a vulnerability affecting the SMBv1 server on Windows systems.
+-  U.S. National Security Agency (N.S.A.) developed EternalBlue exploit.
+- While using a module the prompt changes but it does not enter a folder as we can typically expect in an operating system command line.
+- <mark>show option</mark> - to see all options related to the module/exploit we have chosen.
+- A Post-exploitation module may only need us to set a SESSION ID.
+- <mark>show</mark> command can be used with auxiliary,payload, exploit,etc) to list available modules. Like <mark>show payloads</mark>, <mark>show exploit</mark> for a context like eleternalblue.
+- <mark>show</mark> if used direclty from mfsconsole will list all modules avaialbe.
+- <mark>back</mark> - to leave the context or module.
+- <mark>info</mark> - to get further info about any module.
+- <mark>info exploit/windows/smb/ms17_010_eternalblue</mark> - to get info about a module directly from msfconsole prompt.
+- Info will display detailed information on the module such as its author, relevant sources, etc.
+- <mark>search</mark> - this command will search the Metasploit framework database for modules relevant to the given search parameter.
+- Using CVE numbers, exploit names (eternalblue, heartbleed, etc), or target system one can conduct searches.
+- any module returned in s search result with the command use followed by the number at the beginning of the result line, for e.g. <mark>use 0</mark> instead of use auxiliary/admin/smb/ms17_010_command.
+- search using keywords such as type and platform. For eg. <mark>search type: auxiliary telnt</mark>.
+  
+🔴 Working with modules
+- 
