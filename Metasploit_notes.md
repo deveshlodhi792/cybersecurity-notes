@@ -60,5 +60,8 @@ payloads/**
 - <mark>ping -c 1 8.8.8.8</mark> - to check connectivity with google's DNS.
 - <mark>clear</mark> - to clear terminal screen.
 - Metasploit not allow to use regular command line features (eg. does not support output redirection).
-- 
-- 
+- We can use help command on its own or for a specific command. For eg. <mark>help set</mark> command on msfconsole.
+- <mark>history</mark> command can be used to see commands history.
+- msfconsole have tab completion support.
+- Msfconsole is managed by context. If we using a module and we set a parameter or command such as <mark>RHOSTS</mark> in it, now we switched to another module then the previous parameter will not automatically set on the new module, we have to set it again for this module.
+-  <mark>use exploit/windows/smb/ms17_010_eternalblue</mark> - to use a module in msfconsole
