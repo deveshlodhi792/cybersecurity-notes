@@ -71,7 +71,7 @@ payloads/**
 - <mark>show option</mark> - to see all options related to the module/exploit we have chosen.
 - A Post-exploitation module may only need us to set a SESSION ID.
 - <mark>show</mark> command can be used with auxiliary,payload, exploit,etc) to list available modules. Like <mark>show payloads</mark>, <mark>show exploit</mark> for a context like eleternalblue.
-- <mark>show</mark> if used direclty from mfsconsole will list all modules avaialbe.
+- <mark>show</mark> if used direclty from mfsconsole will list all modules avaialbe. *<mark>show all</mark> sometimes.
 - <mark>back</mark> - to leave the context or module.
 - <mark>info</mark> - to get further info about any module.
 - <mark>info exploit/windows/smb/ms17_010_eternalblue</mark> - to get info about a module directly from msfconsole prompt.
@@ -82,4 +82,7 @@ payloads/**
 - search using keywords such as type and platform. For eg. <mark>search type: auxiliary telnt</mark>.
   
 🔴 Working with modules
+- <mark>use</mark> - to use a module
+- Base on the module one use, additional or different parameters are needed to be set.
+- <mark>show options</mark> - command to list the required parameter of current module.
 - 
