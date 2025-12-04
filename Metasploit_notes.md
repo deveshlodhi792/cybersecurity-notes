@@ -85,4 +85,36 @@ payloads/**
 - <mark>use</mark> - to use a module
 - Base on the module one use, additional or different parameters are needed to be set.
 - <mark>show options</mark> - command to list the required parameter of current module.
+- <mark>set parameter_name value</mark> -> <mark>set RHOSTS 10.233.xx.xx</mark> - This syntax is used to set parameters.
+- One may see five different prompts while using Metasploit :-
+  * The regular command prompt: Here metasploit commands cannot be used.
+  * The msfconsole prompt: msf6 or msf5 or msf is the msfconsole prompt. This prompt is before a context is set, so context-specific commands cannot be used here.
+  * A context prompt : After one set a module the msfconsole will show context prompt. After this one can set parameters and use the module.
+  * The Meterpreter prompt: Meterpreter is an important payload. If one can see this prompt it means a meterpreter agent was loaded to the target system and it connected back to you. One can use meterpreter specific commands here.
+  * A shell on the target system: Once the exploit is completed, you may have access to a command shell on the target system. This is a regular command line, and all commands typed here run on the target system.
+- <mark>show options</mark> - command to list all available parameters.
+- Some parameters require a value to work and some are pre-populated. One have to check itself and put the required value for your target accordingly.
+- <mark>set rhosts 10.10.165.39</mark> - to set RHOSTS parameter to the IP address of target system.
+- After setting a parameter, <mark>show options</mark> command to check the value was set correctly.
+- Parameters that often used :-
+  * RHOSTS :
+    + "Remote Host", the IP address of the target system.
+    + A single IP address of a network range can be set.
+    + This will support the CIDR (Class Inter-Domain Routing) notation (/24, /16, etc.)or a network range (10.10.10.x- 10.10.10.y).
+    + One can use a file where targets are listed. One target IP per line.
+    + command - <mark>set rhosts file:/home/sama/Downloads/targetfile.txt</mark>.
+  * RPORT: "Remote Port", the port on the target system the vulnerable application is running on.
+  * PAYLOAD: The payload one will use with the exploit.
+  * LHOSTS: "Localhost", the attacking machine (your AttackBox or Kali Linux) IP address.
+  * LPORT: "Local Port", the port one will use for the reverse shell to connect back to. This is a port on you attacking machine, and you can set it to any port not used by any other appplication.
+  * SESSION: Each connection established to the target system using Metasploit will have ta session ID. One will use this with post-exploitation modules that will connect to the target system using an existing connection.
+- One can override any set parameter using the <mar>set</mark> command again with different value.
+- <mark>unset</mark> - to clear any set parameter.
+- <mark>unset all</mark>- to clear all set paratmeters.
+- <mark>setg</mark> - to set values that will be used for all modules. It allows to set values so it can be used by default across different modules.
+- <mark>unsetg</mark> - to clear all value globally or set with setg.
+
+- <mark>exploit</mark> or <mark>run</mark> - to launch the module once all parameters are set.
+- <mark>exploit -z</mark> - to run the exploit or module and background the session as soon as it opens.
 - 
+               
