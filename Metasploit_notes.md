@@ -115,6 +115,11 @@ payloads/**
 - <mark>unsetg</mark> - to clear all value globally or set with setg.
 
 - <mark>exploit</mark> or <mark>run</mark> - to launch the module once all parameters are set.
-- <mark>exploit -z</mark> - to run the exploit or module and background the session as soon as it opens.
+- <mark>exploit -z</mark> - to run the exploit or module and background the session as soon as it opens. After using this command target system won't return meterpreter prompt and you will be back to exploit context prompt.
+- <mark>check</mark> - to check if the target system is vulnerable without exploiting it but only some modules support this.
+- Once a vulnerablity has been successfully exploited, a session will be created. This is the communication channel established between the target system and Metasploit.
+- <mark>background</mark> or <mark>CTRL+Z</mark> - to background the session prompt and go back to the msfconsole prompt/module prompt.
+- <mark>sessions</mark> - to see the existing sessions from the msfconsole prompt/module context prompt.
+- <mark>session -i [session id no.]</mark> - to interact/use session.
 - 
                
