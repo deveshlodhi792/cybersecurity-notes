@@ -121,5 +121,26 @@ payloads/**
 - <mark>background</mark> or <mark>CTRL+Z</mark> - to background the session prompt and go back to the msfconsole prompt/module prompt.
 - <mark>sessions</mark> - to see the existing sessions from the msfconsole prompt/module context prompt.
 - <mark>session -i [session id no.]</mark> - to interact/use session.
+
+🔴 Metasploit: Exploitation - Scanning
+
+- Port Scanning
+  * <mark>search portscan</mark> - to list all potential port scanning modules available.
+  * Port scanning modules required to set a few options:
+    + **CONCURRENCY**: Number of targets to be scanned simultaneously.
+    + **PORTS**: Port range to be scanned. Metasploit scan port number 1 to 10000 on default while nmap scans 1-1000 most used ports.
+    + **RHOSTS**: Target or target network to be scanned.
+    + **THREADS**: Number of threads that will be used simultaneously. More threads will result in faster scans.
+  * Nmap scans can be perform directly from msfconsole prompt.
+  * Metasploit is not for speedier approach to port scanning.
+
+- UDP service Identification
+  * **scanner/discovery/udp_sweep** module allow to quickly identify services running over the UDP.
+
+- SMB Scans
+  * Metasploit offers useful auxiliary modules that allow us to scan specific services like SMB (Server Message Block).
+  * **smb_enumshares** and **smb_versions** are useful scanners in a corporate network but there are other numerous scanners one can consider.
+ 
+🔴 The Metasploit Database
 - 
                
