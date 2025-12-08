@@ -142,5 +142,6 @@ payloads/**
   * **smb_enumshares** and **smb_versions** are useful scanners in a corporate network but there are other numerous scanners one can consider.
  
 🔴 The Metasploit Database
-- 
+- An actual penetration testing engagement likely have several targets.
+- Metasploit's database function simplify project managment and avoid possible confusion.
                
