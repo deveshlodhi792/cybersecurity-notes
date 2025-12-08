@@ -143,5 +143,32 @@ payloads/**
  
 🔴 The Metasploit Database
 - An actual penetration testing engagement likely have several targets.
-- Metasploit's database function simplify project managment and avoid possible confusion.
+- Metasploit's database function simplify project managment and avoid possible confusion when setting up parameter values.
+- To start metasploit's database function one need to start the PostSQL database using <mark>systemctl start postgresql</mark> on root user.
+- Then <mark>msfdb init</mark>, if this not work and gives error like "Please run msfdb as a non-root user." Then run <mark>sudo -u postgres msfdb init</mark>.
+- To delete existing database <mark>msfdb delete</mark> or <mark>sudo -u postgres msfdb delete</mark>. If prompt says use non-root user then use postgres account for database installing and to delete it.
+- To check database running status - <mark>db_status</mark> from msfconsole prompt.
+- One can create multiple workspaces to isolate different project.
+- <mark>workspace</mark> - to list all availabe workspaces.
+- <mark>workspace -a [new_workspace_name]</mark> - to add new workspace.
+- <mark>workspace -d [workspace_name]</mark> - to delete a workspace.
+- when one list workspaces using <mark>workspace</mark>, new database name is printed in red, starting with a * symbol.
+- <mark>workspace [workspace_name]</mark> - to navigate or change between workspace.
+- <mark>workspace -h</mark> - to list avaialbe options for the workspace command.
+- <mark>help</mark> command will show the Database Backend's Commands when metasploit is launched with a database.
+- <mark>db_nmap</mark> - to scan using nmap in metasploit and it will save the scanning result in the database you are currently in.
+- <mark>hosts</mark> - to check the saved hosts in database by <mark>db_nmap</mark>.
+- <mark>services</mark> - to check ports active
+- <mark>hosts -h</mark> or <mark>services -h</mark> - to list options for both commands.
+- <mark>hosts -R</mark> - to add the value to the RHOSTS parameter on a metasploit exploit or module saved in the database using db_nmap.
+- Example Workflow
+
+    1. We will use the vulnerability scanning module that finds potential MS17-010 vulnerabilities with the use auxiliary/scanner/smb/smb_ms17_010 command.
+    2. We set the RHOSTS value using hosts -R.
+    3. We have typed show options to check if all values were assigned correctly. (In this example, 10.10.138.32 is the IP address we have scanned earlier using the db_nmap command)
+    4. Once all parameters are set, we launch the exploit using the run or exploit command. 
+
+- <mark>hosts -R</mark> - will use all ip address if saved more than one.
+- <mark>services -S netbios</mark> - to serach for specific services in the environment.
+- 
                
