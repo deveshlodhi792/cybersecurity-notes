@@ -120,7 +120,7 @@ payloads/**
 - Once a vulnerablity has been successfully exploited, a session will be created. This is the communication channel established between the target system and Metasploit.
 - <mark>background</mark> or <mark>CTRL+Z</mark> - to background the session prompt and go back to the msfconsole prompt/module prompt.
 - <mark>sessions</mark> - to see the existing sessions from the msfconsole prompt/module context prompt.
-- <mark>session -i [session id no.]</mark> - to interact/use session.
+- <mark>sessions -i [session id no.]</mark> - to interact/use session.
 
 🔴 Metasploit: Exploitation - Scanning
 
