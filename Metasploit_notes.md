@@ -170,5 +170,13 @@ payloads/**
 
 - <mark>hosts -R</mark> - will use all ip address if saved more than one.
 - <mark>services -S netbios</mark> - to serach for specific services in the environment.
-- 
+
+
+🔴 Metasploit: Exploitation - Scanning
+- Port Scanning:
+  * <mark>search portscan</mark> - to list all available potential port scanning modules.
+  * then <mark>use auxiliary/scanner/portscan/tcp</mark>.
+  * Post scanning modules will require to set a few options:
+    + Firstly one have to list all options using <mark>show options</mark>.
+    + CONCURRENCY: Number  
                
