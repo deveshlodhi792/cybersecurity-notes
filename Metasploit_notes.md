@@ -178,5 +178,19 @@ payloads/**
   * then <mark>use auxiliary/scanner/portscan/tcp</mark>.
   * Post scanning modules will require to set a few options:
     + Firstly one have to list all options using <mark>show options</mark>.
-    + CONCURRENCY: Number  
-               
+    + CONCURRENCY: Number of targets to be scanned simultaneously.
+    + PORTS: Port range to be scanned. Nmap scans 1-1000 most used ports on default configuration while Metasploit scans port number 1 to 10000.
+    + RHOSTS (Remote Host): Target or target network to be scanned.
+    + THREADS: Number of threads that will be used simultaneously. More threads will result in faster scans.
+   
+  * Nmap scans can be done directly from msfconsole prompt <mark>nmap -sS 10.10.12.229</mark>.
+  * For fast scanning nmap could be one first choice as metasploit takes more time than nmap to scan the ports.
+
+
+- UDP Service Identification
+  * <mark>scanner/discovery/udp_sweep</mark> module allow to quickly identify services running over the UDP.
+  * This module will not conduct an extensive scan of all possible UDP services but does provide a quick way to identify services such as DNS or NetBIOS.
+
+
+- SMB Scans
+  * <mark>scanner/smb/smb_version</mark> and <mark>smb_enumshares</mark> are useful modules in a corporate network for SMB service scan.
