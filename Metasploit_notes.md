@@ -194,3 +194,17 @@ payloads/**
 
 - SMB Scans
   * <mark>scanner/smb/smb_version</mark> and <mark>smb_enumshares</mark> are useful modules in a corporate network for SMB service scan.
+
+- When performing service scans, one must not omit exotic services such as NetBIOS.
+- NetBIOS (Network Basic Input Output System), similar to SMB (Server Message Block), allows computers to communicate over the network to share files or send files to printers.
+- NetBIOS name of the target system can give one an idea about the role and importance (eg. SALES, CORP-DC, DEVOPS, etc.)
+
+
+
+🔴 The Metasploit Database
+- Metasploit Database is useful for an actual penetration testing engagement that likely have several targets.
+- Metasploit Database function helps to simplify project management and avoid possible confusion when setting up parameter values.
+- To use this function, first we need to start the PostgreSQL database, which metasploit will use with the following command: <mark>systemctl start postgresql</mark>.
+- then to initialize the Metasploit Database - <mark>msfdb init</mark>.
+- If as the root user it gives the error message - "Please run msfdb as a non-root user", use - <mark>sudo -u postgres msfdb init</mark>.
+- 
