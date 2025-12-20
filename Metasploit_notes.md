@@ -207,4 +207,28 @@ payloads/**
 - To use this function, first we need to start the PostgreSQL database, which metasploit will use with the following command: <mark>systemctl start postgresql</mark>.
 - then to initialize the Metasploit Database - <mark>msfdb init</mark>.
 - If as the root user it gives the error message - "Please run msfdb as a non-root user", use - <mark>sudo -u postgres msfdb init</mark>.
-- 
+- <mark>sudo -u postgres msfdb delete</mark>- to delete the existing data so one can reinstall it.
+- then launch metasploit using <mark>msfconsole</mark> and check the database running status using <mark>db_status</mark>.
+- Database feature allow one to create workspaces to isolate different projects.
+- When first launched, we are automatically in the default workspace.
+- <mark>workspace</mark> - to list all available workspaces.
+- <mark>workspace -a (name)</mark> - to add a new workspace.
+- <mark>workspace -d (name)</mark> - to delete a workspace.
+- <mark>workspace (name)</mark> - to switch between workspaces.
+- <mark>workspace -h</mark> - to list available options for the workspace command.
+- Once Metasploit is launched with a database the <mark>help</mark> command will show the Database Backends Commands menu along with other menus.
+- <mark>db_nmap</mark> - to scan targets using Nmap and save the result to the database.
+- <mark>hosts</mark> and <mark>services</mark>- to reach information relevant to host and services running on target systems.
+- Using <mark>hosts -R</mark> command one can add the value to the RHOSTS parameter of the module. It add the values stored in database using <mark>db_nmap</mark> scan.
+- If more than one hosts saved to the database, all IP addresses will be used when the <mark>hosts -R</mark> command is used.
+- <mark>hosts -h</mark> and <mark>services -h</mark> to list all available options with host and services commands.
+- <mark>services -S netbios(any service name)</mark> - to search for specific services in the environment.
+- While penetration testing these services could be easy targets in the system:-
+  
+    * HTTP: Could potentially host a web application where you can find vulnerabilities like SQL injection or Remote Code Execution (RCE).
+    * FTP: Could allow anonymous login and provide access to interesting files.
+    * SMB: Could be vulnerable to SMB exploits like MS17-010
+    * SSH: Could have default or easy to guess credentials
+    * RDP: Could be vulnerable to Bluekeep or allow desktop access if weak credentials were used. 
+
+
