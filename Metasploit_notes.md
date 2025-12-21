@@ -232,3 +232,24 @@ payloads/**
     * RDP: Could be vulnerable to Bluekeep or allow desktop access if weak credentials were used. 
 
 
+
+🔴 Vulnerability Scanning
+- Metasploit helps one to quickly identify critical vulnerabilities called "low hanging fruit".
+- "Low hanging fruit" refers to easily identifiable and exploitable vulnerabilites that could potentially allow you to gain a foothold on a system, in some cases, gain high-level priviledges such as root or administrator.
+- One may use <mark>search</mark> function on Metasploit to list useful modules which can help to find "low hanging fruits".
+- Like if a VNC service is running on a target, one can search modules using <mark>search "vnc scanner"</mark> or <mark>use "vnc scanner"</mark>, to get the list of all available modules.
+- <mark>info</mark>- command to get information about use and purpose of module. Use - <mark>msf6 auxiliary(scanner/vnc/vnc_login) > info</mark>.
+- <mark>vnc_login</mark> module helps to find login details for the VNC service.
+
+
+
+🔴 Exploitation
+- Exploits are the most populated module category in metasploit.
+- One can search exploits using <mark>search</mark> command.
+- Can obtain more information about the exploit using the <mark>info</mark> command.
+- and can launch exploit using <mark>exploit</mark> or <mark>run</mark> command.
+- Most of the exploits will have a preset default payload but one can can change payload.
+- <mark>show payloads</mark> command lists other payloads we can use with that specific exploit.
+- <mark>set payload 2(no. of payload on the list)</mark> to set payload from the list.
+- 
+
