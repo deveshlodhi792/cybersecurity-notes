@@ -251,5 +251,5 @@ payloads/**
 - Most of the exploits will have a preset default payload but one can can change payload.
 - <mark>show payloads</mark> command lists other payloads we can use with that specific exploit.
 - <mark>set payload 2(no. of payload on the list)</mark> to set payload from the list.
-- 
+- Choosing a working payload can be a trial and error process due to environmental or OS restrictions such as firewall rules, anti-virus, file writing, or the program performing the payload execution isn't available 
 
