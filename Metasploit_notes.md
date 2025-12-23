@@ -251,5 +251,25 @@ payloads/**
 - Most of the exploits will have a preset default payload but one can can change payload.
 - <mark>show payloads</mark> command lists other payloads we can use with that specific exploit.
 - <mark>set payload 2(no. of payload on the list)</mark> to set payload from the list.
-- Choosing a working payload can be a trial and error process due to environmental or OS restrictions such as firewall rules, anti-virus, file writing, or the program performing the payload execution isn't available 
+- Choosing a working payload can be a trial and error process due to environmental or OS restrictions such as firewall rules, anti-virus, file writing, or the program performing the payload execution isn't available (eg. payload/python/shell_reverse_tcp, here python not available in the target system).
+- Some payloads have parameters that we may need to set.
+- <mark>show options</mark> command once more can show avaialbe parameters of payload.
+- Reverse payloads at least requires to set LHOST option. 
+- <mark>CTRL+Z</mark> - to background a reverse shell session or a meterpreter session.
+- <mar>CTRL+C</mark> - to abort the session.
 
+- Working with sessions:
+  * <mark>sessions</mark> - to list all active sessions.
+  * <mark>sessions -h</mark> - to list all available options with command sessions.
+  * <mark>sessions -i 1(no. of session ID)</mark> - to interact with any existing session.
+
+
+
+🔴 Msfvenom
+- Msfvenom allows one to generate payloads.
+- Msfvenom replaced Msfpayload and Msfencode.
+- Msfvenom allows one to create payloads in many different formats like PHP, exe, dll, elf, etc.
+- Msfvenom can create payloads for many different target systems like Apple, Windows, Andriod, Linux, etc.
+- One can either generate stand-alone payloads (e.g. a Windows executable for Meterpreter) or get a usable raw format (e.g. python).
+- <mark>msfvenom --list-formats</mark> command can be used to list supported output formats.
+- 
