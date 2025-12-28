@@ -1,2 +1,18 @@
-1
-
+🔴 Introduction to Meterpreter
+- Meterpreter is a Metasploit payload that supports the penetration testing process with many valuable components.
+- Meterpreter runs on the target system and it act as an agent within a command and control architecture.
+- Using Meterpreter one can interact with the target operating system and files and run specialized Meterpreter's commands.
+- Meterpreter runs on the target system without installing itself.
+- It runs in the memory (RAM) and does not write itself to the disk on the target.
+- This feature helps to avoid get detected by antivirus scans.
+- Meterpreter is seen as a process when it runs on the target.
+- Meterpreter also avoid being detected by network-based IPS (Intrusion Prevention System) and IDS (Intrusion Detection System) solutions.
+- It uses encrypted communication with the server where Metasploit runs (our attacking machine) to avoid being detected.
+- Meterpreter is recognized by major antivirus software, this feature provides some degree of stealth.
+- <mark>meterpreter > getpid</mark>, <mark>getpid</mark> command to get the process ID with which Meterpreter is running on the target.
+- Process ID number is used to interact with the process when the need arises (e.g. if it needs to be stopped).
+- <mark>meterpreter > ps</mark>, <mark>ps</mark> command to list processes running on the target system, we can see meterpreter's PID is named spoolsv.exe and not by its name.
+- Even if we were to go a step further and look at DLLs (Dynamic-Link Libraries) used by the Meterpreter process, we still would not find anything jumping at us (e.g. no meterpreter.dll).
+- <mark>C:\Windows\system32>tasklist /m /fi "pid eq 1304"</mark> to see DLL in the meterpreter session on the target system after using shell command.
+- Metepreter establish encrypted (TLS) communication channel with the attacker's system.
+- 
