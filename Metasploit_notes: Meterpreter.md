@@ -15,4 +15,12 @@
 - Even if we were to go a step further and look at DLLs (Dynamic-Link Libraries) used by the Meterpreter process, we still would not find anything jumping at us (e.g. no meterpreter.dll).
 - <mark>C:\Windows\system32>tasklist /m /fi "pid eq 1304"</mark> to see DLL in the meterpreter session on the target system after using shell command.
 - Metepreter establish encrypted (TLS) communication channel with the attacker's system.
-- 
+
+
+
+🔴 Meterpreter Flavors
+- Metasploit payloads are divided into two categories; inline (also called single) and staged.
+- Staged payloads are sent to the target into two steps.
+- An intial part of the payload is sent to target called as stager and then it request the rest of the payload.
+- This allows for a smaller initial payload size.
+- Meterpreter payloads has a wide range of different versions you can choose from based on your 
