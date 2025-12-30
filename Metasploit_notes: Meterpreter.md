@@ -120,4 +120,41 @@ Note: Different Meterpreter versions have different commands categories.
     + webcam_snap : Takes snapshot from the specified webcam
     + getsystem : Attempts to elevate your privilege to that of local system
     + hashdump : Dumps the contents of the SAM database
+   
 
+
+🔴 Post-Exploitation with Meterpreter
+- <mark>meterpreter > help</mark>
+  * <mark>help</mark> - this command gives a list of all available commands in Meterpreter.
+  * Meterpreter has many versions, and each version may have different options available.
+      
+- Meterpreter commands
+  * <mark>getuid</mark> - display the user(name) with which Meterpreter is currently running.
+  * This gives the idea about one's privilege level on the target system like Admin Level user or regular user.
+  * <mark>ps</mark> - list the running processes.
+  * The PID (Process id) column will also give you the PID information you will need to migrate Meterpreter to another process.
+
+- Migrate
+  * Migrating meterpreter process id to another process id will help Meterpreter interact with it.
+  * For example, if you see a word processer running on the target (e.g. word.exe, notepad.exe, etc.) you can migrate the meterpreter to it and start capturing keystrokes send by the user to this process.
+  * Some Meterpreter version will offer <mark>keyscan_start</mark>, <mark>keyscan_stop</mark>, and <mark>keyscan_dump</mark> command options to make Meterpreter act like a keylogger.
+  * Migrating to another process makes Meterpreter's session more stable.
+  * <mark>meterpreter > migrate 716[process id]</mark> - example of migrating to process.
+  * we may lose user privileges of higher level if we migrate to lower level user process.
+
+ - Hashdump
+   * <mark>hashdump</mark> - it lists the content of the SAM database.
+   * SAM (Security Account Manager) database store user's passwords on Windows system.
+   * These passwords are stored in the NTLM (New Technology LAN Manager) format.
+   * Cracking hashes is not Mathematically possible but using rainbow table attack or using online NTLM database we can discover cleartext of password.
+   * SAM hashes are also useful in Pass-the-Hash attacks to authenticate to other systems that these users can access the same network.
+
+ - Search
+   * <mark>search</mark> - used to locate files with potentially juicy information. Command use example <mark>meterpreter > search -f flag2.txt</mark>.
+   * In a CTF context, this can be used to quickly find a flag or proof file, while in actual penetration testing engagements, you may need to search for user-generated files or configuration files that may contain password or account information.
+
+ - Shell
+   * The shell command will launch a regular command-line shell on the target system.
+   * Pressing Ctrl+Z will help to go back to the Meterpreter shell.
+   * <mark>shell</mark>.
+ - 
