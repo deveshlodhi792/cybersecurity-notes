@@ -156,5 +156,12 @@ Note: Different Meterpreter versions have different commands categories.
  - Shell
    * The shell command will launch a regular command-line shell on the target system.
    * Pressing Ctrl+Z will help to go back to the Meterpreter shell.
-   * <mark>shell</mark>.
- - 
+   * <mark>shell</mark> - to use command line of target in meterpreter.
+
+🔴 Post-Exploitation Challenge
+- <mark>getsystem</mark and <mark>hashdump</mark> commands provide important leverage and information for privilege escalation and lateral movement.
+- Meterpreter is a good base to run post-exploitation modules available on the Metasploit framework.
+- <mark>load</mark> command can be used to leverage additional tools such as Kiwi or even the whole Python language.
+- If we load any additional tool, then we will see new options on the <mark>help</mark> menu.
+- <mark>meterpreter > search -f secrets.txt[file-name]</mark> - to search for the file in the target system.
+- <marK>meterpreter > cat "[full path]/secrets.txt"</mark> - to see the content of the file. Don't forget to add the double quotes ("") on full path of the file.
