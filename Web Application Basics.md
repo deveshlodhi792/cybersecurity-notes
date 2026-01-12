@@ -26,4 +26,8 @@ Date: 05-01-2026
 - WAF (Web Application Firewall)
   * WAF provides protection to the web Application
   * WAF helps a web application to filter out suspicious and dangerous requests away from the web servers.
-    
+ 
+
+
+ 🔴 Uniform Resource Locator
+ - 
