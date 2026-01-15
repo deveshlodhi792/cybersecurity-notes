@@ -30,4 +30,10 @@ Date: 05-01-2026
 
 
  🔴 Uniform Resource Locator
- - 
+ - A Uniform Resource Locator (URL) is a web address that lets one to access all kinds of online content like a webpage, a video, an image or other media.
+ - URL links have the path to the specific location for the resource. In short it guides the browser to the right place on the internet.
+ - A URL is made up of several parts, each part helps to get to the right resource.
+ - A URL looks like this - "http://user:password@example.com:80/view-room?id=1#task3"
+ - Here is a breakdown of the key components:
+   * Scheme : The Scheme is the protocol used to access the website. HTTP and HTTPS are the most common.
+   * User : Some URLs have user's login details (usually a username) for sites that require authentication. 
