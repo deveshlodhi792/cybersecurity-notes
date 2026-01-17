@@ -36,4 +36,7 @@ Date: 05-01-2026
  - A URL looks like this - "http://user:password@example.com:80/view-room?id=1#task3"
  - Here is a breakdown of the key components:
    * Scheme : The Scheme is the protocol used to access the website. HTTP and HTTPS are the most common.
-   * User : Some URLs have user's login details (usually a username) for sites that require authentication. 
+   * User : Some URLs have user's login details (usually a username) for sites that require authentication. URL's that need credentials to access their content usually have user's details in it but it is not very safe, it can expose sensitive information, which is a security risk.
+   * Host/Domain : The Host or Domain is the most important component of a URL as it tells which website you are accessing. Every domain name is unique and registered through domain registrar. Some fake domains using typosquatting often use phishing attacks and trick people to give their sensitive info.
+   * Port : The port number helps direct you browser to the right service on the web server. Port numbers range from 1 to 65,535, but the most common are 80 for HTTP and 443 for HTTPS.
+   * Path : The pathe 
