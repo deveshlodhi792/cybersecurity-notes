@@ -39,4 +39,19 @@ Date: 05-01-2026
    * User : Some URLs have user's login details (usually a username) for sites that require authentication. URL's that need credentials to access their content usually have user's details in it but it is not very safe, it can expose sensitive information, which is a security risk.
    * Host/Domain : The Host or Domain is the most important component of a URL as it tells which website you are accessing. Every domain name is unique and registered through domain registrar. Some fake domains using typosquatting often use phishing attacks and trick people to give their sensitive info.
    * Port : The port number helps direct you browser to the right service on the web server. Port numbers range from 1 to 65,535, but the most common are 80 for HTTP and 443 for HTTPS.
-   * Path : The pathe 
+   * Path : The path points to the specific file or page on the server that you're trying to access. Its like a roadmap that shows the browser where to go. Websites need to secure these paths to make sure only authorised users can access sensitive resources.
+   * Query String : The query string part of URL starts with a question mark (?). The query string is used in a web application to search terms or form inputs. Users can modify these query strings, it's important to handle them securely to prevent attacks like injections, where malicious code could be added.
+   * Fragment : The fragment part starts with a hash symbol (#) and helps point to a specific section of a webpage - like jumping directly to a particular heading or table. Users can modify this too like query strings. Its important to check and clean up any data here to avoid issues like injection attacks.
+  
+
+
+🔴 HTTP Messages
+- HTTP messages are the packets of data exchanged between a user (the client) and the web server.
+- These messages show how user's requests and the server's responses are communicated.
+- Types of HTTP messages:
+  * HTTP Requests : Sent by the user to trigger actions on the web application.
+  * HTTP Respnses : Sent by the server in response to the user's request.
+ 
+- Every message follows a specific format to make communication smoothly.
+- State Line
+                          
