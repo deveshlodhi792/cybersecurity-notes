@@ -53,5 +53,12 @@ Date: 05-01-2026
   * HTTP Respnses : Sent by the server in response to the user's request.
  
 - Every message follows a specific format to make communication smoothly.
-- State Line
+
+- **Start Line** : The start line is like the Indroduction of the message. It tells one about what kind of message is being sent, whether it's a request from the user or a response from the server.
+
+- **Headers** : Headers are made up of key-value pairs that provide extra information about the HTTP message. They give instructions to both the client and server handling the request or response. These headers cover all sorts of things, like security, content types, and more, making sure everything goes smoothly in the communication.
+
+- **Empyt Line** : The empty line act as a little divider between the header and the body. It's essential because it shows where the headers stop and where the actual content of the message begins. Without empty line the client or server could misinterpret the message and can cause errors.
+
+-  **Body** : The body is where 
                           
