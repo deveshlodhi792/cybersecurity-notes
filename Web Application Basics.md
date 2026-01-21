@@ -60,5 +60,5 @@ Date: 05-01-2026
 
 - **Empyt Line** : The empty line act as a little divider between the header and the body. It's essential because it shows where the headers stop and where the actual content of the message begins. Without empty line the client or server could misinterpret the message and can cause errors.
 
--  **Body** : The body is where 
+-  **Body** : The body is where the actual data is stored.
                           
