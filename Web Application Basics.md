@@ -64,5 +64,10 @@ Date: 05-01-2026
 
 - Understanding of HTTP Messages helps one to diagnose issues in web communication for its better performance and reliablity.
 - Understanding HTTP Messages is alos crucial for security. It helps one to implement strong security measures to protect data during transmission.
+
+
+
+🔴 HTTP Request: Request Line and Methods
+- An HTTP request
   
                           
