@@ -36,3 +36,6 @@
 
 
   * <mark>DROP TABLE table_name;</mark> - to remove tables in a database.  
+
+# CRUD Operations
+<p>CRUD stands for Create, Read, Update, and Delete,</p>
