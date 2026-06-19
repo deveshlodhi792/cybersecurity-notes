@@ -32,4 +32,7 @@
 <img width="865" height="135" alt="image" src="https://github.com/user-attachments/assets/54a48282-06a2-4998-b0d2-618d4dacefd5" />
  
  
+
+
+
   * <mark>DROP TABLE table_name;</mark> - to remove tables in a database.  
