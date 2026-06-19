@@ -1,4 +1,4 @@
-# Commands of mysql:-
+# Commands for mysql:-
 
 * launching and setting up mysql - <mark>mysql -u root -p</mark>; then enter device password.
 * to create database - <mark>CREATE DATABASE new_database_name;</mark>
