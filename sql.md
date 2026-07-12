@@ -38,4 +38,30 @@
   * <mark>DROP TABLE table_name;</mark> - to remove tables in a database.  
 
 # CRUD Operations
-<p>CRUD stands for Create, Read, Update, and Delete,</p>
+* CRUD stands for Create, Read, Update, and Delete
+
+## C - Create(Insert)
+  
+  * To create a new record in the table - "INSERT INTO"
+
+    Example:-
+
+  INSERT INTO books (id, name, published_date, description)
+  VALUES (1, "Android Security Internals", "2014-10-14", "An In-Depth Guide to Android's Security Architecture");
+  
+  > In the example, we are inserting the record of a book in the table named 'books'.
+
+## R - Read(Select)
+  * To view contents of a table - "SELECT * FROM"
+
+    example:-
+
+    1. SELECT * FROM books;
+
+    2. SELECT name,description FROM books;
+   
+       
+    > In the example, the command will show all coloumns along with contents of a table. Here *(asterisk) symbol indicate to retrive all coloumns of the table. If we want to view only specific coloumns then we have to put name of coloumn in place of asterisk symbol, we can see this in example 2 above and ',' is used to retrive multiple coloumns.
+
+
+    
