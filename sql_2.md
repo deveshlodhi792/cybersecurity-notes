@@ -11,13 +11,13 @@
 - Groups rows with the same values in specified column(s).  
 - Used with aggregate functions (COUNT(), SUM(), AVG(), MAX(), MIN()).  
 - Returns one result for each group.
-- Example 1:-
-  SELECT name, COUNT(*)  
+- Example 1:-  
+  SELECT name, COUNT(*)    
   FROM books  
   GROUP BY name  
 
-- Example 2:-
-  SELECT category, SUM(amount)
+- Example 2:-  
+  SELECT category, SUM(amount)  
   FROM hacking_tools,  
   GROUP by category
 
