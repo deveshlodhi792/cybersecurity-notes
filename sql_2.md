@@ -21,5 +21,4 @@
   FROM hacking_tools,  
   GROUP by category
 
-> This statment will group the list of tools by category {some tools are of same category} and aggregate the amount of tools which belongs to same category.
-
+> This statement groups the records by category and aggregates the amount values using SUM() to produce the total amount for each category.
